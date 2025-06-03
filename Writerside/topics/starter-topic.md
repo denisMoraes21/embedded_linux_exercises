@@ -92,3 +92,5 @@ consumo, automação industrial, IoT, roteadores, TVs inteligentes, entre outros
 - Sistemas de arquivos mínimos
 - Depuração
 
+## Referências bibliográficas
+
