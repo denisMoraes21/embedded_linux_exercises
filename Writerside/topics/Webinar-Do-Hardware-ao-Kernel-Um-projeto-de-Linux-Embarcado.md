@@ -96,7 +96,13 @@ isoladas (ex: com docker ou podman).
 - Parâmetros do boot
 - Debug e troubleshooting do sistema
 
-### 
+### Console e Demo
+
+- Abordagem monolítica: Imagem simples e bootável (core-image-minimal), gerada pelo Yocto Project. Possui os componentes
+básicos como u-boot, kernel, módulos e Busybox.
+- Abordagem via containers: Imagem com sistema Pantavisor para gerenciamento de containers. As aplicações são instaladas 
+de forma separada e isoladas através de containers LXC. Contém u-boot, kernel, módulos, gerenciador de containers (Panta
+visor) e containers.
 
 
 
