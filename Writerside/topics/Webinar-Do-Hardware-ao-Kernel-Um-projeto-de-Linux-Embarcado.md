@@ -84,6 +84,19 @@ customizado pelo fabricante para o seu hardware, nem sempre atualizado para a ut
 para depois que o kernel inicializa.
 - O que esperar dentro do rootfs: /bin - comandos básicos (ex: ls, cp, sh), /etc - configurações do sistema, /dev - dis-
 positivos conectados, /proc e /sys - informações do kernel e hardware, /lib - bibliotecas usadas pelos programas.
+- Sistema de init: é o primeiro processo iniciado pelo kernel. Exemplo são systemd, init, runinit, OpenRC.
+- BusyBox: Um conjunto de comandos compactados em um único binário. Ideal para sistemas minimalistas com pouco espaço 
+como no caso de Sistemas Embarcados.
+- Aplicações e customizações: Scripts próprios, aplicativos embarcados, atualizações OTA, e até contâiners com aplicações
+isoladas (ex: com docker ou podman).
+
+## Console e Boot
+
+- Bootloader (Uboot, etc...)
+- Parâmetros do boot
+- Debug e troubleshooting do sistema
+
+### 
 
 
 
