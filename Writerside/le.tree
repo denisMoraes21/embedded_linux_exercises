@@ -8,6 +8,10 @@
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="Empty-MD-Topic.md"/>
-    <toc-element topic="Ferramentas-essenciais.md"/>
+    <toc-element topic="Ferramentas-essenciais.md">
+        <toc-element topic="Buildroot.md">
+            <toc-element topic="Aplicação-básica.md"/>
+        </toc-element>
+    </toc-element>
     <toc-element topic="Webinar-Do-Hardware-ao-Kernel-Um-projeto-de-Linux-Embarcado.md"/>
 </instance-profile>
