@@ -7,6 +7,7 @@
                  start-page="starter-topic.md">
 
     <toc-element topic="starter-topic.md"/>
+    <toc-element topic="Glossário.md"/>
     <toc-element topic="Empty-MD-Topic.md"/>
     <toc-element topic="Ferramentas-essenciais.md">
         <toc-element topic="Buildroot.md">
