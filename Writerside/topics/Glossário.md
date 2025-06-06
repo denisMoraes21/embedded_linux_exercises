@@ -8,3 +8,5 @@ desenvolvimento de software de sistemas embarcados.
 
 - BSP: Board Support Package
 - SDK: Software Development Kit
+
+- Daemon: processo que roda em segundo plano.
