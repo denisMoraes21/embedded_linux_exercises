@@ -94,4 +94,58 @@ conectado.
 - SystemV: Muito utilizado mas já sendo substituido por Upstart e Systemd.
 - Systemd: Capacidade de paralelização, socket e D-bus para ativar serviços, iniciar daemons sob demanda
 
+# Uso genérico do buildroot
 
+- make V=1 target = mostra todos os comandos que podem ser executados por make.
+- make list-defconfigs - mostra uma lista de placas com defconfig.
+- make help - mostra todos os targets disponíveis (busybox-menuconfig, linux-menuconfig, uclibc-menuconfig, barebox-
+menuconfig, uboot-menuconfig)
+- make clean - somente necessário quando mudar arquitetura ou toolchain.
+- make manual-clean - limpa manual.
+- make manual - compila manual.
+- make distclean - limpa todos os resultado do build.
+- make clean all - limpa tudo.
+
+## Entendendo quando um rebuild é necessário
+
+- É responsabilidade saber o que deve ser reconstruído.
+- Quando a configuração da arquitetura é alterada, é necessário rebuildar tudo.
+- Quando a configuração da toolchain é alterada, é necessário rebuildar tudo.
+- Quando um pacote é adicionado, não é necessário rebuildar tudo.
+- Quando um pacote é removido, não é necessário fazer nada.
+- Quando alterações nos pacotes são feitas, é necessário rebuild apenas para os pacotes.
+- Quando o esqueleto do root filesystem é mudado, um rebuild completo é necessário.
+
+## Entendendo como rebuildar pacotes.
+
+- make pacote-dirclean : limpa o diretório de saída.
+- make pacote-rebuild : reiniciar o processo de compilação.
+- make source: para baixar todas as dependências necessárias.
+- make O=/tmp/build menuconfig : para compilar coisas fora da pasta principal
+
+## Variáveis de ambiente
+
+- HOSTCXX: especificar versão do compilador de C++
+- HOSTCC: especificar versão do compilador de C.
+- UCLIBC_CONFIG_FILE: especificar toolchain
+- BUSYBOX_CONFIG_FILE: especificar versão do busybox
+- BR2_CCACHE_DIR: para especificar onde o Buildroot guarda o cache.
+- BR2_DL_DIR: para especificar onde serão guardados os downloads.
+- BR2_GRAPH_ALT: especificar esquema de cores alternativo para gráficos.
+- BR2_GRAPH_OUT: especificar o tipo de arquivo de geração de gráficos.
+- BR2_GRAPH_DEPS_OPTS: passar dependências extras para o gráfico de dependência.
+- BR2_GRAPH_DOT_OPTS: dependências gráficas.
+- BR2_GRAPH_SIZE_OPTS: tamanho do gráfico.
+
+OBS: utilizar arquivos esparsos é permitido, mas pode gerar erro de compilação corrompendo o sistema.
+
+- make show-info: json com informações sobre pacotes.
+- make pckg-stats: para saber se tem versão superior.
+
+É possível gerar gráficos entre dependências de pacotes.
+É possível gerar gráficos de duração de build.
+É possível gerar gráficos de tamanho de sistema de arquivos.
+
+Build paralelo: Pode usar make -jN ou alterar BR2_JLEVEL ou habilitar BR2_PER_PACKAGE_DIRECTORIES
+
+ 
